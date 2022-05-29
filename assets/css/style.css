@@ -12,10 +12,13 @@
     --check: #2FAB73;
 }
 
+ion-icon{
+    margin-right: 20px;
+}
 body {
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
-    padding: 50px 0;
+    padding-top: 50px;
     color: var(--letter-color-1);
 }
 
@@ -261,6 +264,8 @@ header{
 
 .new-page{
     background: linear-gradient(0deg,#fff,var(--secondary));
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .features-desc--text{
@@ -426,7 +431,7 @@ header{
 }
 
 .new-page__customers{
-    background-color: var(--secondary);
+    background: linear-gradient(0deg, var(--secondary), #F8F8F8);
 }
 
 .customers__text{
@@ -434,12 +439,12 @@ header{
 }
 
 .customers__comment-list{
-    
-    width: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
     scroll-behavior: smooth;
     flex-direction: row;
     list-style: none;
+    margin-bottom: 60px;
 }
 
 .customers__comment-list--item{
@@ -449,6 +454,12 @@ header{
     width: 300px;
     margin-right: 50px;
     flex: 0 0 300px;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+
+.customers__comment-list--item:hover{
+    border: 2px solid var(--primary);
 }
 
 .customers__comment-list--item.active{
@@ -480,4 +491,160 @@ header{
 .cus-dest{
     font-size: 14px;
     color: var(--letter-color-2);
+}
+
+.customers-navigation{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.customer__nav-list{
+    flex-direction: row;
+    list-style: none;
+}
+
+.nav-list__item{
+    margin-right: 15px;
+    width: 15px;
+    height: 15px;
+    flex: 1 1 15px;
+    background-color: #b9bfc5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+
+.nav-list__item:hover{
+    background-color: var(--primary);
+}
+
+.nav-list__item.active{
+    width: 45px;
+    background-color: var(--primary);
+    border-radius: 10px;
+    box-shadow: 1px 5px 20px rgb(209, 197, 197);
+}
+
+.arrow{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: var(--primary);
+    transition: .2s ease all;
+    border-radius: 50%;
+}
+
+.arrow:hover{
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+}
+.arrow.disable{
+    opacity: .3;
+    pointer-events: none;
+}
+
+footer{
+    padding-top: 180px;
+    background: linear-gradient(180deg,var(--secondary),#f8f8f8);
+}
+
+footer > *{
+    flex: 1 1;
+}
+.footer__subscribe-modal{
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 70px;
+    background-color: white;
+    border-radius: 10px;
+    transform: translateY(50%);
+}
+
+.footer__subscribe-modal > *{
+    flex: 1 1 30%;
+}
+
+.subs-modal--title{
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.subs-modal--desc{
+    font-size: 16px;
+    display: block;
+}
+
+.sub-button{
+    width: 250px;
+    padding: 18px 65px;
+    color: white;
+    background-color: #F53838;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.footer__logo{
+    display: inline-flex;
+}
+
+.footer__laslesVPN{
+    flex-direction: column;
+    flex: 2;
+}
+
+.footer__laslesVPN > *{
+    margin-bottom: 30px;
+}
+
+.laslesVPN__desc{
+    line-height: 30px;
+}
+
+.laslesVPN__logos > *{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.laslesVPN__copyright{
+    color: #AFB5C0;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+.footer__product,
+.footer__engage,
+.footer__earn-money{
+    flex-direction: column;
+}
+
+.footer__product ul,
+.footer__engage ul,
+.footer__earn-money ul{
+    list-style: none;
+}
+
+.footer__product .title,
+.footer__engage .title,
+.footer__earn-money .title{
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+.footer__product ul > li,
+.footer__engage ul > li,
+.footer__earn-money ul > li{
+    margin-bottom: 10px;
+    line-height: 30px;
 }

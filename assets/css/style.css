@@ -14,6 +14,7 @@
 
 ion-icon{
     margin-right: 20px;
+    pointer-events: none;
 }
 body {
     box-sizing: border-box;
@@ -59,6 +60,16 @@ header{
     width: 100%;
     justify-content: space-between;
     line-height: 19px;
+    position: relative;
+}
+
+.header__responsive-menu__detail {
+    flex: 2 0;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header__responsive-menu__detail > *{
+    flex: 1 1;
 }
 
 .logo{
@@ -99,14 +110,18 @@ header{
 }
 
 .header__inner--sign{
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .header--sign-in{
     color: var(--letter-color-1);
     font-weight: 700;
-    margin-inline: 30px;
+}
+.header__inner--sign > *{
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
 }
 
 .header--sign-up{
@@ -115,6 +130,9 @@ header{
     box-sizing: border-box;
 }
 
+.laslesVPN__desc{
+    padding-right: 20px;
+}
 .button{
     border-radius: 50px;
     color: var(--primary);
@@ -647,17 +665,40 @@ footer a:hover{
     line-height: 30px;
 }
 
+.header__responsive-menu{
+    flex: 1 1 100%;
+    display: none;
+}
+
+.res__menu-icon{
+    height: 100%;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.res__menu-icon ion-icon{
+    font-weight: 700;
+    color: var(--primary);
+    margin-inline: 10px;
+    font-size: 40px;
+}
+
 /* BREAK POINT*/
-@media (max-width: 1024px) and (min-width: 740px) {
+@media screen and (max-width: 1024px) {
+    /* header{
+        width: min-content;
+    } */
     .padding-inline{
-        padding-inline: 75px;
+        padding-inline: 40px;
     }
     .header-list-item{
         margin-inline: 10px;
     }
-    .header__inner--sign > *{
-        flex: 1 1;
-    }
+
     .header__inner--nav{
         flex: 2 1   ;
     }
@@ -703,16 +744,163 @@ footer a:hover{
     .footer__subscribe-modal{
         padding: 0;
     }
-    
+    .header--sign-in,
+    .header--sign-up{
+        margin-inline: 15x;
+    }
+    .header--sign-up {
+        padding-inline: 20px;
+    }
+
 }
 
-@media (max-width: 739px) {
-    *{
-        padding: 0 !important;
-        margin: 0 !important;
+@media screen and (max-width: 739px) {
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 5px 15px 5px 15px;
+        box-sizing: border-box;
+        background-color: white;
+        z-index: 200;
+        box-shadow: 1px 1px 20px rgb(223, 214, 214);
     }
-    html{
-        width: auto;
+    .header-list-item{
+        margin-inline: 0;
+    }
+    .header__responsive-menu{
+        display: flex;
+        justify-content: flex-end;
     }
 
+    .header__inner--logo{
+        line-height: 60px;
+    }
+    .header__responsive-menu__detail{
+        width: 100%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        background-color: white;
+        justify-content: space-between;
+        display: none;
+        background-color: white;
+        padding-top: 20px;
+        box-shadow: 0px 30px 30px rgb(240, 235, 235);
+    }
+    .header__responsive-menu__detail.is-shown{
+        display: block;
+    }
+    .header__responsive-menu__detail > *{
+        justify-content: flex-start;
+        padding-inline-start: 40px;
+    }
+    .header-nav-list{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-list-item{
+        margin-bottom: 15px;
+        color: var(--primary);
+    }
+
+    .header-list-item a {
+        color: var(--primary);
+    }
+    .header__inner--sign{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header__inner--sign > *{
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .header__inner--sign{
+        margin-top: 20px;
+    }
+    
+    .button{
+        color: var(--primary);
+        background-color: transparent;
+    }
+    .button::before{
+        width: 0;
+        height: 0;
+    }
+    .header--sign-up{
+        padding: 0;
+    }
+    .intro__inner--slogan{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .slogan-title{
+        font-size: 35px;
+    }
+    .content__inner--general-info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .general-info__inner--locations{
+        border-inline: none;
+        border-block: 2px solid #EEEFF2;
+    }
+    .features__inner--desc{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .new-page__inner--network{
+        padding-top: 50px;
+    }
+    .new-page__text{
+        width: 100%;
+    }
+    .new-page__text > span{
+        width: 100%;
+    }
+    .new-page--desc{
+        margin-inline: 0;
+    }
+    .plan__inner--plan-list{
+        flex-direction: column;
+    }
+    .plan-list--item{
+        margin-inline: 0;
+        margin-block: 5px;
+    }
+    .plan-features{
+        justify-content: center;
+        margin-inline: 0;
+    }
+    .new-page__text{
+        margin-bottom: 50px;
+    }
+    .arrow:hover{
+        color: var(--primary);
+        background-color: white;
+    }
+    .subs-modal--title{
+        font-size: 30px;
+    }
+    .footer__subscribe-modal{
+
+        flex-direction: column;
+    }
+    .sub-button{
+        margin-top: 30px;
+    }
+    .footer__laslesVPN {
+        display: none;
+    }
+    body{
+        padding-top: 0;
+    }
 }
